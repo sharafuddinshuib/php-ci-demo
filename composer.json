@@ -1,0 +1,16 @@
+{
+    "name": "sharafuddinshuib/php-ci-demo",
+    "description": "Simple PHP CI/CD Demo",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sharafuddin Shuib",
+            "email": "sharafuddin.shuib@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}

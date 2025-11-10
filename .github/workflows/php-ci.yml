@@ -1,10 +1,11 @@
-name: PHP Syntax Check
+name: PHP CI
 
 on: [push, pull_request]
 
 jobs:
-  lint:
+  build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -14,7 +15,8 @@ jobs:
         with:
           php-version: '8.2'
 
+      - name: Install Composer dependencies
+        run: composer install --no-progress --no-interaction --prefer-dist
+
       - name: Validate PHP syntax
-        run: |
-          echo "🔍 Checking PHP syntax..."
-          find . -type f -name "*.php" -print0 | xargs -0 -n1 php -l
+        run: find . -type f -name "*.php" -print0 | xargs -0 -n1 php l
